@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ቆሻሻ</string>
+    <string name="title_activity_path">Path</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+    <!-- Login Page -->
+    <string name="login">ግባ</string>
+    <string name="username">የተጠቃሚ ስም</string>
+    <string name="password">የይለፍ ቃል</string>
+    <string name="loginbtn">ግባ</string>
+    <string name="forgotMessage">የይለፍ ቃል ረሱ</string>
+    <string name="Welcome">ወደ መግቢያው ገጽ እንኳን ደህና መጡ</string>
+
+    <!-- Bottom Navigation -->
+    <string name="home">ዋናው</string>
+    <string name="setting">ቅንብር</string>
+    <string name="profile">መገለጫ</string>
+
+    <!-- Main Page -->
+    <string name="dashboard">ዳሽቦርድ</string>
+    <string name="notification">ማስታወቂያ</string>
+    <string name="unknown">የማይታወቅ</string>
+    <string name="route">መንገድ</string>
+    <string name="garbageInfo">የቆሻሻ መረጃ</string>
+    <string name="logout">ውጣ</string>
+
+    <!-- Profile Page -->
+    <string name="welcome">ወደ መገለጫ እንኳን በደህና መጡ</string>
+    <string name="id">መታወቂያ</string>
+    <string name="uname">የተጠቃሚ ስም</string>
+    <string name="email">ኢሜይል</string>
+    <string name="gender">ጾታ</string>
+
+    <!-- Setting Page -->
+    <string name="general">አጠቃላይ</string>
+    <string name="darkmode">ጨለማ ሁነታ</string>
+    <string name="privacy">ግላዊነት እና ደህንነት</string>
+    <string name="language">ቋንቋ</string>
+    <string name="help">እርዳታ</string>
+    <string name="about">ስለ</string>
+    <string name="version">ስሪት</string>
+    <string name="aboutUs">ስለ እኛ</string>
+
+    <!-- Garbage Details -->
+    <string name="garbageDetails">የቆሻሻ ዝርዝሮች</string>
+    <string name="latitude">ኬክሮስ</string>
+    <string name="longitude">ኬንትሮስ</string>
+    <string name="level">ደረጃ</string>
+
+    <!-- About Us -->
+    <string name="description">ወደ ብልጥ ቆሻሻ አሰባሰብ ስርዓት የሞባይል መተግበሪያ እንኳን በደህና መጡ። ይህ መተግበሪያ ለአሽከርካሪዎች ተግባራቸውን ቀላል እና ውጤታማ ለማድረግ የተፈጠረ ነው። አሽከርካሪዎች መንገዶቻቸውን እንዲያዩ እና እንዲያስተዳድሩ፣ የአቧራ ማጠራቀሚያዎቹ ሲሞሉ ማሳወቂያዎችን እንዲያገኙ ያስችላቸዋል። በአጠቃላይ የእኛ የሞባይል አፕሊኬሽን ለአሽከርካሪዎች የቆሻሻ ማጠራቀሚያዎችን በብቃት ለመሰብሰብ ቀላል መድረክን ይሰጣል።</string>
+</resources>

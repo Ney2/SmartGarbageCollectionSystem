@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">SGCS</string>
+    <string name="title_activity_path">Path</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+
+    <!-- Login Page -->
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="loginbtn">Login</string>
+    <string name="forgotMessage">Forgot Password</string>
+    <string name="Welcome">Forgot Password</string>
+
+    <!-- Bottom Navigation -->
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
+    <string name="profile">Profile</string>
+
+    <!-- Home Page -->
+    <string name="dashboard">Dashboard</string>
+    <string name="notification">Notification</string>
+    <string name="unknown">Unknown</string>
+    <string name="route">Route</string>
+    <string name="garbageInfo">Garbage Info</string>
+    <string name="logout">Logout</string>
+
+    <!-- Profile Page -->
+    <string name="welcome">Welcome to Profile</string>
+    <string name="id">ID</string>
+    <string name="uname">Username</string>
+    <string name="email">Email</string>
+    <string name="gender">Gender</string>
+
+    <!-- Setting Page -->
+    <string name="general">General</string>
+    <string name="darkmode">Dark Mode</string>
+    <string name="privacy">Privacy and Security</string>
+    <string name="language">Language</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="version">Version</string>
+    <string name="aboutUs">About Us</string>
+
+    <!-- Garbage Details -->
+    <string name="garbageDetails">Garbage Details</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="level">Level</string>
+
+    <!-- About Us -->
+    <string name="description">Welcome to our smart garbage collection system mobile app.This app is created for drivers to make their task simple and effective. It enables drivers to view and manage their routes, get notifications when the dustbins are full. In general, our mobile application offers an easy to use platform for drivers to effectively collect dustbins.</string>
+</resources>

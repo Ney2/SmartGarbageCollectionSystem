@@ -1,0 +1,110 @@
+#include <LiquidCrystal.h>
+#include <TinyGPS.h>
+#include <SoftwareSerial.h>  
+SoftwareSerial SIM900A(6,7); 
+TinyGPS gps;
+const int trigPin = 9;
+const int echoPin = 8;
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
+long duration;
+float duration_us, distance_cm;
+
+void setup()
+{
+  lcd.begin(16, 2);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  Serial.begin(9600);
+  SIM900A.begin(9600);
+  lcd.setCursor(0, 0); 
+  lcd.print("SMART GARBAGE PROJ.");
+  delay(2000);
+}
+
+void loop()
+{
+ 
+  if (distance_cm>=100 )
+  {
+   SIM900A.println(distance_cm);
+   lcd.setCursor(0, 0);
+   lcd.print("DUSTBIN IS EMPTY"); 
+   SIM900A.println();
+   delay(200);
+  }
+
+ else if (distance_cm<75 && distance_cm>=40 )
+  {
+  float flat, flon;
+  unsigned long age;
+  gps.f_get_position(&flat, &flon, &age);   
+  Serial.println ("Sending Message");  
+  SIM900A.println("AT+CMGF=1");
+  delay(1000);  
+  Serial.println ("Set SMS Number");  
+  SIM900A.println("AT+CMGS=\"986556128\"\r"); 
+  delay(1000);  
+  Serial.println ("Set SMS Content");  
+  SIM900A.println("DUSTBIN HALF FULL");  
+  delay(100);  
+  Serial.println ("Finish");  
+  SIM900A.println((char)26);
+  delay(1000);  
+  Serial.println ("Message has been sent ->SMS Selesai dikirim");
+  lcd.setCursor(0, 0);
+  lcd.print("DUSTBIN HALF FULL"); 
+  delay(200);
+  SIM900A.println();
+  SIM900A.print("Distance in cm: ");
+  SIM900A.println(distance_cm);
+  delay(200); 
+  }
+  
+  else {
+  float flat, flon;
+  unsigned long age;
+  gps.f_get_position(&flat, &flon, &age);   
+  Serial.println ("Sending Message");  
+  SIM900A.println("AT+CMGF=1"); 
+  delay(1000);  
+  Serial.println ("Set SMS Number");  
+  SIM900A.println("AT+CMGS=\"986556128\"\r"); 
+  delay(1000);  
+  Serial.println ("Set SMS Content");  
+  SIM900A.println("DUST BIN IS FULL"); 
+  delay(100);  
+  lcd.print(distance_cm); 
+  delay(100);
+  Serial.println ("Finish");  
+  SIM900A.println((char)26);
+  delay(1000); 
+  lcd.setCursor(0, 0);
+  lcd.print("DUSTBIN  IS FULL"); 
+  delay(200);
+  SIM900A.println();
+  SIM900A.print("Distance in cm: ");
+  SIM900A.println(distance_cm);
+  delay(200); 
+
+   SIM900A.println("AT+HTTPINIT");
+  delay(1000);
+ SIM900A.println("AT+HTTPPARA=\"CID\",1");
+  delay(1000);
+  SIM900A.println("AT+HTTPPARA=\"URL\",\"https://wycliffite-rainbow.000webhostapp.com/dataReceiver.php\"");
+  delay(1000);
+  SIM900A.println("AT+HTTPPARA=\"CONTENT\",\"application/x-www-form-urlencoded\"");
+  delay(1000);
+ SIM900A.print("AT+HTTPDATA=");
+SIM900A.print(String(distance_cm).length());
+  SIM900A.println(",10000");
+  delay(1000);
+  SIM900A.println(String(distance_cm));
+  delay(1000);
+  SIM900A.println("AT+HTTPACTION=1");
+  delay(10000);
+SIM900A.println("AT+HTTPTERM");
+  delay(1000);
+ }
+}

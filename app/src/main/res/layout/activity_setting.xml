@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".Setting">
+
+   <TextView
+       android:id="@+id/general"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="@string/general"
+       android:padding="12dp"
+       android:textSize="24sp"
+       android:textStyle="bold"
+       android:textColor="@color/text_color"/>
+
+    <LinearLayout
+        android:id="@+id/dark"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/general">
+
+        <ImageView
+            android:id="@+id/darkMode"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:src="@drawable/dark_mode"
+            android:padding="12dp"
+            />
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="@string/darkmode"
+            android:textColor="@color/text_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12dp"
+            android:clickable="true"/>
+
+        <Switch
+            android:id="@+id/switchMode"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:theme="@style/nightModeSwitch"
+            android:switchMinWidth="50dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/privacy"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/dark">
+
+        <ImageView
+            android:id="@+id/privacyAndSecurity"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:src="@drawable/shield_mode"
+            android:padding="12dp"
+            />
+
+        <TextView
+            android:id="@+id/txtPrivacy"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/privacy"
+            android:textColor="@color/text_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lan"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/privacy">
+
+        <ImageView
+            android:id="@+id/language"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:src="@drawable/language"
+            android:padding="12dp"
+            />
+
+        <TextView
+            android:id="@+id/txtLan"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/language"
+            android:textColor="@color/text_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/hel"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/lan">
+
+        <ImageView
+            android:id="@+id/help"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:src="@drawable/help"
+            android:padding="12dp"
+            />
+
+        <TextView
+            android:id="@+id/txtHelp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/help"
+            android:textColor="@color/text_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about"
+        android:padding="12dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_color"
+        android:layout_below="@+id/hel"/>
+
+    <LinearLayout
+        android:id="@+id/ver"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="12dp"
+        android:layout_below="@+id/about"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/version"
+            android:textColor="@color/text_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1.0.0"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtAboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/aboutUs"
+        android:textColor="@color/text_color"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="12dp"
+        android:layout_below="@+id/ver"
+        android:clickable="true"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/purple_500"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/menu"/>
+</RelativeLayout>
